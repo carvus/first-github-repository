@@ -1,13 +1,11 @@
 import './App.css';
-import Counter from './components/Counter'
+import Users from './components/Users';
 
 function App() {
-  function afterAddingN(number){
-    console.log(`avelacrinq ${number} հե հե`);
-  }
+
   return (
     <div className="App">
-      <Counter armeniAttribute={afterAddingN}/>
+      <Users/>
     </div>
   );
 }
