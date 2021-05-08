@@ -2,22 +2,9 @@
 
 
 export function request (url,method,data){
-    return new Promise((rslv,rjct)=>{
-        let req = new XMLHttpRequest();
-        req.open(method,url);
-
-        req.onreadystatechange = function(){
-            if(this.readyState === 4){
-                if(this.status < 400){
-                    rslv(JSON.parse(this.responseText));
-                }else{
-                    rjct(this.statusText);
-                }
-            }
-        }
-        if(data)
-            req.send(data);
-        else 
-            req.send();
+    return new Promise(async (rslv,rjct)=>{
+       const req = await fetch(url,{method,data})
+       rslv( await req.json() );
+       rjct(err=>err);
     });
 }
