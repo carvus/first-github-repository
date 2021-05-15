@@ -23,7 +23,9 @@ class Users extends react.Component {
   }
   render() {
     return (
-        this.state.isLoaded ? this.state.users.map((user, i) => <p key={i}>{user.name}</p>) : <Loading/>
+      <div>
+        {this.state.isLoaded ? this.state.users.map((user, i) => <p key={i}>{user.name}</p>) : <Loading/>}
+      </div>
     );
   }
 }

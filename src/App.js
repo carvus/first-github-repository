@@ -1,8 +1,6 @@
 import "./App.css";
-import Users from "./components/Users";
-import DaysAndHours from "./components/DaysAndHours";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import {routes} from './routes';
+import {redirects} from './routes';
 import { BrowserRouter, Route, Switch, Redirect, NavLink } from "react-router-dom";
 
 function App() {
@@ -12,20 +10,30 @@ function App() {
         <nav>
           <ul>
             <li>
-              <NavLink className="list-items" exact activeClassName="xndzor" to="/main">Home</NavLink>
+              <NavLink exact className="list-items" activeClassName="xndzor" to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink  className="list-items" exact activeClassName="xndzor" to="/main/about">About</NavLink>
+              <NavLink exact className="list-items" activeClassName="xndzor" to="/main/about">About</NavLink>
             </li>
             <li>
-              <NavLink  className="list-items" exact activeClassName="xndzor" to="/urishej">Urish Ej</NavLink>
+              <NavLink exact className="list-items" activeClassName="xndzor" to="/urishej">Urish Ej</NavLink>
+            </li>
+            <li>
+              <NavLink exact className="list-items" activeClassName="xndzor" to="/users">Users</NavLink>
+            </li>
+            <li>
+              <NavLink exact className="list-items" activeClassName="xndzor" to="/forms">Forms</NavLink>
             </li>
           </ul>
         </nav>
         <Switch>
-          <Route exact path="/main" component={Home}></Route>
-          <Route path="/main/about" component={About}></Route>
-          <Route path="/urishej" component={DaysAndHours}></Route>
+          {routes.map((route,i)=>(
+            <Route key={i} path={route.path} component={route.component} exact={route.isExact}/>          
+          ))}
+
+          {redirects.map((r,i)=>(
+            <Redirect key={i} from={r.from} to={r.to} />          
+          ))}
         </Switch>
       </BrowserRouter>
     </div>
