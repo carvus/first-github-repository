@@ -1,38 +1,58 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+@font-face {
+  font-family: my-app-font;
+  src: url("Fonts/Golos-UI_Regular.woff");
+}
+
 .App {
   text-align: center;
+  font-family: my-app-font;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.xndzor{
+  font-size: 26px;
+  text-shadow: 5px 5px 5px white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul{
+  list-style: none;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 10vh;
+}
+
+nav{
+  width: 100%;
+  background-color: #282c34;
+}
+
+.list-items{
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.content-divs,input{
+  color: #282c34;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="submit"],button{
+  width: 8vw;
+  height: 4vh;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
 }
+
+
+.hoc-test{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
