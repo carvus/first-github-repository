@@ -1,8 +1,9 @@
 import DaysAndHours from "./components/DaysAndHours";
-import Forms from "./components/Forms";
+import Forms from "./pages/Forms";
 import Users from "./components/Users";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import HOCTest from "./components/HOCTest";
 
 export const routes = [
     {
@@ -25,6 +26,10 @@ export const routes = [
     {
         path: "/forms",
         component: Forms
+    },
+    {
+        path: "/hocTest",
+        component: HOCTest
     }
 ]
 

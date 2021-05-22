@@ -2,6 +2,7 @@ import "./App.css";
 import {routes} from './routes';
 import {redirects} from './routes';
 import { BrowserRouter, Route, Switch, Redirect, NavLink } from "react-router-dom";
+import HOCTest from './components/HOCTest';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
             </li>
             <li>
               <NavLink exact className="list-items" activeClassName="xndzor" to="/forms">Forms</NavLink>
+            </li>
+            <li>
+              <NavLink exact className="list-items" activeClassName="xndzor" to="/hocTest">HOCTest</NavLink>
             </li>
           </ul>
         </nav>
